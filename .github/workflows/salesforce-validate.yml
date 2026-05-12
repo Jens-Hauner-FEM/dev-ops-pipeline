@@ -1,0 +1,22 @@
+name: salesforce-validate
+on:
+  pull_request:
+#    types: [opened, synchronize, reopened, ready_for_review]
+    branches: 
+      - 'main'
+    paths:
+      - 'force-app/**'
+permissions:
+  contents: 'read'
+  id-token: 'write'
+  pull-requests: 'read'
+jobs:
+  validate-job:
+    name: Validate source code
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run dummy sf command
+	runs-on: salesforce/cli
+        run: 
+          - sf version
+          - sf plugin list
