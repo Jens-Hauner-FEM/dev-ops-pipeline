@@ -17,6 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Run dummy sf command
-        run: 
-          - sf version
-          - sf plugin list
+        run: sf version
