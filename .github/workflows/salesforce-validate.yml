@@ -13,10 +13,10 @@ permissions:
 jobs:
   validate-job:
     name: Validate source code
+    runs-on: salesforce/cli
     steps:
       - uses: actions/checkout@v6
       - name: Run dummy sf command
-	runs-on: salesforce/cli
         run: 
           - sf version
           - sf plugin list
