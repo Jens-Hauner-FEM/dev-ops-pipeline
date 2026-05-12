@@ -13,7 +13,7 @@ permissions:
 jobs:
   validate-job:
     name: Validate source code
-    runs-on: salesforce/cli
+#    runs-on: salesforce/cli
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
